@@ -23,15 +23,9 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates blob plots (\code{stacked = FALSE}) or stacked frequency plots (\code{stacked = TRUE}) for each algorithm
 from a bootstrapped, ranked assessment data set.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

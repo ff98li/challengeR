@@ -72,7 +72,7 @@ importFrom("relations","relation","as.relation",
     "relation_is_transitive", "relation_is_trichotomous", "relation_scores",
     "relation_violations","relation_dissimilarity")
 importFrom("graph", "addEdge")
-
+importFrom("grDevices", "windowsFonts", "windowsFont")
 
 S3method(print, comparedRanks)
 S3method(print, aggregated)

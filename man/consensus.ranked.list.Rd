@@ -13,9 +13,6 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Computes a consensus ranking (rank aggregation) across tasks.
 }

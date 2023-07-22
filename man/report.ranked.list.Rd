@@ -49,9 +49,6 @@ The options are "jpeg", "png" and "pdf",  e.g. \code{fig.format = c("jpeg", "png
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Generates a benchmarking report in PDF, HTML or Word format without bootstrapping results.
 It contains the rankings, plots of the raw assessment data and plots of the ranking stability.

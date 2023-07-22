@@ -7,12 +7,12 @@
 \method{methodsplot}{challenge}(
   x,
   na.treat = NULL,
-  methods = list(testBased = . \%>\% test() \%>\% rank(ties.method = "min"),
-    meanThenRank = . \%>\% aggregate(FUN = "mean") \%>\% rank(ties.method = "min"),
-    medianThenRank = . \%>\% aggregate(FUN = "median") \%>\% rank(ties.method = "min"),
-    rankThenMean = . \%>\% rank(ties.method = "min") \%>\% aggregate(FUN = "mean") \%>\%
-    rank(ties.method = "min"), rankThenMedian = . \%>\% rank(ties.method = "min") \%>\%
-    aggregate(FUN = "median") \%>\% rank(ties.method = "min")),
+  methods = list(testBased = . \%>\% test() \%>\% rank(ties.method = "min"), meanThenRank
+    = . \%>\% aggregate(FUN = "mean") \%>\% rank(ties.method = "min"), medianThenRank = .
+    \%>\% aggregate(FUN = "median") \%>\% rank(ties.method = "min"), rankThenMean = .
+    \%>\% rank(ties.method = "min") \%>\% aggregate(FUN = "mean") \%>\% rank(ties.method
+    = "min"), rankThenMedian = . \%>\% rank(ties.method = "min") \%>\% aggregate(FUN =
+    "median") \%>\% rank(ties.method = "min")),
   ordering,
   ...
 )
@@ -27,14 +27,8 @@ For a numeric value or function, NAs will be replaced by the specified values. F
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Create line plots that visualize the robustness of ranking across different ranking methods from a challenge object.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

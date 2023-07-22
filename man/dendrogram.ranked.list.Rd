@@ -15,14 +15,8 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates a cluster dendrogram from a ranked assessment data set.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

@@ -19,8 +19,10 @@
   dots.cex = 1,
   places.lty = 2,
   places.col = 1,
-  legendfn = function(algs, cols) {     legend("topleft", algs, lwd = 1, col = cols, bg
-    = "white") },
+  legendfn = function(algs, cols) {
+     legend("topleft", algs, lwd = 1, col = cols, bg
+    = "white")
+ },
   layout.heights = c(1, 0.4),
   ...
 )
@@ -34,14 +36,8 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates a podium plot from a challenge object.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

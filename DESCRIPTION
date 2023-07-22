@@ -22,7 +22,8 @@ Imports:
   rlang (>= 0.4.5),
   rmarkdown (>= 2.1),
   tidyr (>= 1.0.2),
-  viridisLite (>= 0.3.0)
+  viridisLite (>= 0.3.0),
+  grDevices
 Suggests:
   doParallel (>= 1.0.15),
   foreach (>= 1.4.8),
@@ -31,4 +32,4 @@ Suggests:
   testthat (>= 2.1.0)
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.0
+RoxygenNote: 7.2.3

@@ -19,14 +19,8 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates a blob plots visualizing the ranking variability across tasks.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

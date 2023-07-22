@@ -13,14 +13,8 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates ranking heatmaps from one or more ranked assessment data sets.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

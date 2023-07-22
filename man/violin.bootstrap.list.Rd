@@ -11,14 +11,8 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates a violin plot from a bootstrapped, ranked assessment data set.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

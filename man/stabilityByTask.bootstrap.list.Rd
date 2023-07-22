@@ -22,14 +22,8 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates blob plots for each task from a bootstrapped, ranked assessment data set.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

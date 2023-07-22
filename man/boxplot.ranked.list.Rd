@@ -15,16 +15,10 @@
 
 \item{color}{A string specifying the color of the dots.}
 }
-\value{
-
-}
 \description{
 Creates dot- and boxplots visualizing the assessment data separately for each algorithm.
 Boxplots representing descriptive statistics for all test cases (median, quartiles and outliers)
 are combined with horizontally jittered dots representing individual test cases.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

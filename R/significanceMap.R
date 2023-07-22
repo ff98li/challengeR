@@ -45,7 +45,7 @@ significanceMap.ranked.list=function(object,
                                      alpha=0.05,p.adjust.method="holm",
                                      order=FALSE,
                                      size.rank=.3*theme_get()$text$size,...){
-
+  
   a=object$data%>%decision.challenge(na.treat=object$call[[1]][[1]]$na.treat,
                                      alpha=alpha,
                                      p.adjust.method=p.adjust.method)
@@ -77,10 +77,19 @@ significanceMap.ranked.list=function(object,
  }
 
 
+#' @importFrom grDevices windowsFonts windowsFont
 significanceMap.data.frame=function(object,
                                     relation_object,
                                     order=FALSE,
                                     size.rank=.3*theme_get()$text$size,...){
+
+  if (Sys.info()['sysname'] == "Windows") {
+      ## Note that this line will fail if you are not on Windows. --Feifei
+      windowsFonts(Times=windowsFont("Times New Roman"))
+      font_family = "Times"
+  } else {
+      font_family = "sans"
+  }
 
   object$algorithm=rownames(object)
   inc=relation_incidence(relation_object)
@@ -133,7 +142,11 @@ significanceMap.data.frame=function(object,
     geom_abline(slope=1) +
     coord_cartesian(clip = 'off')+
     theme(aspect.ratio=1,
-          axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+          axis.text.x = element_text(family=font_family, angle = 90, vjust = 0.5, hjust = 1),
+          axis.text.y = element_text(family=font_family),
+          axis.title.x = element_text(family=font_family),
+          axis.title.y = element_text(family=font_family),
+          plot.title = element_text(family=font_family, face="bold"),
           plot.margin=unit(c(1,1,1,1), "lines"),
           legend.position="none")+
     ylab("Algorithm")+
@@ -159,31 +172,31 @@ significanceMap.data.frame=function(object,
                  linetype=lt,
                  color=th_get$panel.grid$colour,
                  size=gridSize)+
-      geom_abline(slope=1)+
-      geom_text(aes(x=algorithm,y=fixy,label=rank),
-                nudge_y=.5,
-                vjust = 0,
-                size=size.rank,
-                fontface="plain",family="sans"
-      )
+      geom_abline(slope=1)
 
+      ## Code that adds the numbers
+      #p = p + geom_text(aes(x=algorithm,y=fixy,label=rank),
+      #          nudge_y=.5,
+      #          vjust = 0,
+      #          size=size.rank,
+      #          fontface="plain",family="sans")
 
   if (order) p=  p+
       geom_text(aes(x=algorithm,y=fixy,label=score),
                 nudge_y=0,
                 vjust = 0, size=size.rank,
-                fontface="plain",family="sans") +
+                fontface="plain",family=font_family) +
       annotate("text",
                x=0,y=fixy+.5,
                vjust = 0,
                size=size.rank,
                fontface="plain",
-               family="sans",
+               family=font_family,
                label="original")+
       annotate("text",x=0,y=fixy,
                vjust = 0,
                size=size.rank,
-               fontface="plain",family="sans",label="new")
+               fontface="plain",family=font_family,label="new")
 
   return(p)
 

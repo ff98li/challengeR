@@ -18,9 +18,6 @@
 \arguments{
 \item{...}{}
 }
-\value{
-
-}
 \description{
 Title
 }

@@ -22,14 +22,8 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates significance maps from a ranked assessment data set.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

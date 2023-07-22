@@ -370,6 +370,7 @@ stabilityByAlgorithm.bootstrap.list=function(x,
 #'
 #' @family functions to visualize ranking stability
 #' @family functions to visualize cross-task insights
+#' @importFrom grDevices windowsFonts windowsFont
 #' @export
 stabilityByTask.bootstrap.list=function(x,
                                         ordering,
@@ -378,6 +379,15 @@ stabilityByTask.bootstrap.list=function(x,
                                         size.ranks=.3*theme_get()$text$size,
                                         shape=4,
                                         showLabelForSingleTask=FALSE,...){
+
+  if (Sys.info()['sysname'] == "Windows") {
+      ## Note that this line will fail if you are not on Windows. --Feifei
+      windowsFonts(Times=windowsFont("Times New Roman"))
+      font_family = "Times"
+  } else {
+      font_family = "sans"
+  }
+
   rankDist=rankdist.bootstrap.list(x)
   ranks=melt.ranked.list(x,
                          measure.vars="rank",
@@ -421,25 +431,35 @@ stabilityByTask.bootstrap.list=function(x,
                  geom="linerange",
                  fun.data=function(x) data.frame(ymin=quantile(x,probs[1]),
                                                  ymax=quantile(x,probs[2])))+
-    geom_text(aes(x=algorithm,y=1,label=full.rank),
+    geom_text(aes(x=algorithm,y=1,label=full.rank), ## Remove this geom_text if you don't want the numbers
               nudge_y=-.6,
               vjust = 0,
               size=size.ranks,
               fontface="plain",
-              family="sans",
+              family=font_family,
               data=ranks) +
     coord_cartesian(clip = 'off')+
-    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))+
     guides(size = guide_legend(title="%"))+
     scale_y_continuous(minor_breaks=NULL,
                        limits=c(.4, max(rankDist$rank)),
                        breaks=breaks)+
     xlab("Algorithm")+
-    ylab("Rank")
+    ylab("Rank") +
+    theme(
+        legend.title=element_text(family = font_family),
+        legend.text=element_text(family = font_family)
+    )
   
     # Create multi-panel plot with task names as labels for multi-task data set or single-task data set when explicitly specified
     if (length(x$data) > 1 || showLabelForSingleTask == TRUE) {
-      blobPlot <- blobPlot + facet_wrap(vars(task))
+      blobPlot <- blobPlot + facet_wrap(vars(task)) +
+      theme(
+          axis.text.x = element_text(family = font_family, angle = 90, vjust = 0.5, hjust = 1),
+          axis.text.y = element_text(family=font_family),
+          axis.title.x = element_text(family=font_family),
+          axis.title.y = element_text(family=font_family),
+          strip.text = element_text(family=font_family)
+      )
     }
   
   return(blobPlot)

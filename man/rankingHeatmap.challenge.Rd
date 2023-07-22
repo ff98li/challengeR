@@ -13,14 +13,8 @@
 
 \item{...}{Further arguments passed to or from other functions.}
 }
-\value{
-
-}
 \description{
 Creates a ranking heatmap from a challenge object.
-}
-\examples{
-
 }
 \seealso{
 \code{browseVignettes("challengeR")}

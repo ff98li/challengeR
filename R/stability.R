@@ -447,7 +447,11 @@ stabilityByTask.bootstrap.list=function(x,
     ylab("Rank") +
     theme(
         legend.title=element_text(family = font_family),
-        legend.text=element_text(family = font_family)
+        legend.text=element_text(family = font_family),
+        axis.text.x = element_text(family = font_family, angle = 90, vjust = 0.5, hjust = 1),
+        axis.text.y = element_text(family=font_family),
+        axis.title.x = element_text(family=font_family),
+        axis.title.y = element_text(family=font_family)
     )
   
     # Create multi-panel plot with task names as labels for multi-task data set or single-task data set when explicitly specified
